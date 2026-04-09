@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy — Lost The Jungle Hidden Object</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #050d08;
+            background-image:
+                radial-gradient(ellipse 100% 55% at 50% 0%, rgba(45, 95, 58, 0.35), transparent 52%),
+                linear-gradient(178deg, #040a06 0%, #0f1f14 55%, #071208 100%);
+            color: #a8c4b0;
+            line-height: 1.75;
+            min-height: 100vh;
+        }
+
+        .vine-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #1a3d24, #c9a227, #2d5f3a, #c9a227, #1a3d24);
+            opacity: 0.85;
+        }
+
+        .shell {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 36px 22px 64px;
+        }
+
+        .masthead {
+            margin-bottom: 40px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(93, 156, 110, 0.22);
+        }
+
+        .masthead .glyph {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+
+        .masthead h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.95rem;
+            font-weight: 700;
+            color: #f2f6f0;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .masthead .app-line {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #c9a227;
+        }
+
+        .masthead .meta {
+            margin-top: 16px;
+            font-size: 0.88rem;
+            color: #5a7a62;
+            font-weight: 600;
+        }
+
+        section {
+            margin-bottom: 36px;
+        }
+
+        section h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #e8d48c;
+            margin-bottom: 14px;
+        }
+
+        section p {
+            font-size: 0.98rem;
+            margin-bottom: 12px;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        section strong {
+            color: #eef4ef;
+            font-weight: 700;
+        }
+
+        .split-cards {
+            display: grid;
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        @media (min-width: 560px) {
+            .split-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: rgba(18, 42, 28, 0.55);
+            border: 1px solid rgba(93, 156, 110, 0.22);
+            border-radius: 14px;
+            padding: 18px 20px;
+        }
+
+        .card h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #9dcca8;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            margin: 0;
+            color: #9bb5a5;
+        }
+
+        .highlight-band {
+            background: linear-gradient(135deg, rgba(45, 95, 58, 0.35) 0%, rgba(201, 162, 39, 0.1) 100%);
+            border: 1px solid rgba(201, 162, 39, 0.25);
+            border-radius: 14px;
+            padding: 20px 22px;
+            margin-top: 8px;
+        }
+
+        .highlight-band p {
+            margin: 0;
+            font-size: 0.98rem;
+        }
+
+        .numbered {
+            counter-reset: item;
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0;
+        }
+
+        .numbered li {
+            position: relative;
+            padding-left: 36px;
+            margin-bottom: 14px;
+            font-size: 0.97rem;
+        }
+
+        .numbered li:last-child {
+            margin-bottom: 0;
+        }
+
+        .numbered li::before {
+            counter-increment: item;
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 0.1em;
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            background: rgba(45, 95, 58, 0.5);
+            border: 1px solid rgba(93, 156, 110, 0.35);
+            color: #e8d48c;
+            font-size: 0.78rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back {
+            margin-top: 48px;
+            text-align: center;
+        }
+
+        .back a {
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #8fb399;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(93, 156, 110, 0.35);
+            background: rgba(18, 42, 28, 0.4);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .back a:hover {
+            background: rgba(45, 95, 58, 0.25);
+            color: #c5e0cc;
+        }
+
+        @media (max-width: 520px) {
+            .masthead h1 { font-size: 1.55rem; }
+            .shell { padding: 28px 18px 52px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="vine-bar" aria-hidden="true"></div>
+
+    <div class="shell">
+        <header class="masthead">
+            <div class="glyph" aria-hidden="true">🔒</div>
+            <h1>Privacy overview</h1>
+            <p class="app-line">Lost The Jungle Hidden Object</p>
+            <p class="meta">Last updated: April 2026</p>
+        </header>
+
+        <section>
+            <h2>Scope of this document</h2>
+            <p>This page summarizes privacy-related information for the mobile title <strong>Lost The Jungle Hidden Object</strong>, distributed through Apple’s App Store. It is a plain-language companion to what appears on the store listing; it does not replace Apple’s own legal notices or your device settings.</p>
+        </section>
+
+        <section>
+            <h2>Data collection (as stated on the App Store)</h2>
+            <p>The product page for this app indicates that the developer has declared <strong>no data collection</strong> for the categories covered by Apple’s “App Privacy” labels—that is, the app is not reported to gather personal data through those disclosed practices.</p>
+            <div class="highlight-band">
+                <p>Store listings and app behaviour can evolve with updates. For the latest label, open the app’s page in the App Store and review the <strong>App Privacy</strong> section.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>How the pieces fit together</h2>
+            <div class="split-cards">
+                <div class="card">
+                    <h3>Apple’s platform</h3>
+                    <p>Installing, updating, or signing in with an Apple ID involves Apple’s systems. Data handling there is governed by Apple’s policies, not by this game alone.</p>
+                </div>
+                <div class="card">
+                    <h3>On your device</h3>
+                    <p>Like many puzzle games, progress or preferences may be kept locally so levels and settings work offline. That storage typically remains on the device unless a future version explicitly adds cloud sync.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Advertising &amp; Game Center</h2>
+            <p>The age rating notes that the app <strong>contains advertising</strong>. Ad networks, if present, may process data under their own rules; you can limit ad tracking where iOS allows (for example through Privacy &amp; Security settings).</p>
+            <p><strong>Game Center</strong> features (such as leaderboards) use Apple’s gaming services; participation is optional and managed through your Apple ID and system settings.</p>
+        </section>
+
+        <section>
+            <h2>Players of all ages</h2>
+            <p>The app is rated <strong>4+</strong>. Parents and guardians can use Screen Time, Family Sharing, and purchase controls built into iOS and iPadOS to supervise installs and in-app activity.</p>
+        </section>
+
+        <section>
+            <h2>If this text changes</h2>
+            <p>We may edit this overview to stay accurate when the store listing or app updates. The <strong>Last updated</strong> line at the top will change when we publish a revision. Always rely on the App Store “App Privacy” details for the official developer submission.</p>
+        </section>
+
+        <section>
+            <h2>Getting help</h2>
+            <p>For questions specific to the app, use the support options Apple provides on the App Store product page (for example <strong>App Support</strong> or reporting a problem). No additional contact channels are listed on this site.</p>
+            <ol class="numbered">
+                <li>Open the app listing on the App Store.</li>
+                <li>Scroll to the developer or support links shown by Apple.</li>
+                <li>Use those tools for feedback or privacy inquiries tied to the published app.</li>
+            </ol>
+        </section>
+
+        <nav class="back">
+            <a href="index.html">Return to game overview</a>
+        </nav>
+    </div>
+</body>
+
+</html>
